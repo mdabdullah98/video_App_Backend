@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const videoSchema = new mongoose.Schema(
   {
@@ -12,8 +12,13 @@ const videoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    duration: {
+      //duration will come from clowdnary
+      type: String,
+      required: true,
+    },
     owner: {
-      type: mongoose.Schema.Types.ObjectId(),
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
     title: {
@@ -21,11 +26,6 @@ const videoSchema = new mongoose.Schema(
       required: true,
     },
     description: {
-      type: String,
-      required: true,
-    },
-    duration: {
-      //will come from clowdnary
       type: String,
       required: true,
     },

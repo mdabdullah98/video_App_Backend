@@ -1,8 +1,11 @@
 import { app, port } from "./app.js";
+
+import path from "path";
+
 import connectDb from "./db/db.js";
 
 app.get("/", (req, res, next) => {
-  res.send("hello g");
+  res.sendFile(path.resolve(__dirname, "public/index.html"));
 });
 
 connectDb()
